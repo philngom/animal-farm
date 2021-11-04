@@ -14,32 +14,35 @@ const lastAnimalPlayed = document.getElementById('recent-animal-played');
   // use user input to update state
   // update DOM to reflect the new state
 catImage.addEventListener('click', () => {
-    lastAnimalPlayed.textContent = 'You clicked the cat image';
-    catAudio.currentTime = 0;
-    catAudio.play();
+    playAnimalSound(catAudio, 'cat');
 });
 
 dogImage.addEventListener('click', () => {
-    lastAnimalPlayed.textContent = 'You clicked the dog image';
-    dogAudio.currentTime = 0;
-    dogAudio.play();
+    playAnimalSound(dogAudio, 'dog');
 });
 
 horseImage.addEventListener('click', () => {
-    lastAnimalPlayed.textContent = 'You clicked the horse image';
-    horseAudio.currentTime = 0;
-    horseAudio.play();
+    playAnimalSound(horseAudio, 'horse');
 });
+
+function playAnimalSound(sound, animal) {
+    sound.currentTime = 0;
+    sound.play();
+    lastAnimalPlayed.textContent = `You clicked the ${animal} image`;
+}
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'h') {
         horseAudio.currentTime = 0;
         horseAudio.play();
+        lastAnimalPlayed.textContent = 'You clicked the horse image';
     } else if (e.key === 'd') {
         dogAudio.currentTime = 0;
         dogAudio.play();
+        lastAnimalPlayed.textContent = 'You clicked the dog image';
     } else if (e.key === 'c'){
         catAudio.currentTime = 0;
         catAudio.play();
+        lastAnimalPlayed.textContent = 'You clicked the cat image';
     }
 });
