@@ -30,3 +30,16 @@ horseImage.addEventListener('click', () => {
     horseAudio.currentTime = 0;
     horseAudio.play();
 });
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'h') {
+        horseAudio.currentTime = 0;
+        horseAudio.play();
+    } else if (e.key === 'd') {
+        dogAudio.currentTime = 0;
+        dogAudio.play();
+    } else if (e.key === 'c'){
+        catAudio.currentTime = 0;
+        catAudio.play();
+    }
+});
