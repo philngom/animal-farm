@@ -33,16 +33,10 @@ function playAnimalSound(sound, animal) {
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'h') {
-        horseAudio.currentTime = 0;
-        horseAudio.play();
-        lastAnimalPlayed.textContent = 'You clicked the horse image';
+        playAnimalSound(horseAudio, 'horse');
     } else if (e.key === 'd') {
-        dogAudio.currentTime = 0;
-        dogAudio.play();
-        lastAnimalPlayed.textContent = 'You clicked the dog image';
+        playAnimalSound(dogAudio, 'dog');
     } else if (e.key === 'c'){
-        catAudio.currentTime = 0;
-        catAudio.play();
-        lastAnimalPlayed.textContent = 'You clicked the cat image';
+        playAnimalSound(catAudio, 'cat');
     }
 });
